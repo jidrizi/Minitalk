@@ -6,7 +6,7 @@
 #    By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/06 16:14:51 by jidrizi           #+#    #+#              #
-#    Updated: 2024/07/06 17:11:50 by jidrizi          ###   ########.fr        #
+#    Updated: 2024/07/06 18:42:14 by jidrizi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,17 +16,32 @@ CFLAGS = -Wall -Werror -Wextra
 
 SRC = main.c
 
-OBJS = $(SRC:.c=.o)
+OBJS = $(SRC:%.c=bin/%.o)
 
 NAME = minitalk
 
+LIB = -lft -Llibft/ 
+HEADER = -I libft/
+
+DEPS = minitalk.h
+
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	@$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+bin:
+	@mkdir -p bin
+
+bin/%.o : %.c $(DEPS) | bin
+	$(CC) -c -o $@ $< $(CFLAGS) $(HEADER)
+
+./libft/libft.a:
+	@git submodule update --init ./libft
+	@make -C ./libft
+
+$(NAME): ./libft/libft.a $(OBJS)
+	$(CC) -o $(NAME) $(OBJS) $(LIB) -ldl $(HEADER) $(CFLAGS)
 
 clean:
-	@rm -f $(OBJS)
+	@rm -rf bin
 	@echo "cleaned"
 
 fclean: clean

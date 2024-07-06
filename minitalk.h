@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   minitalk.h                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/06 16:14:39 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/06 18:32:57 by jidrizi          ###   ########.fr       */
+/*   Created: 2024/07/06 17:13:09 by jidrizi           #+#    #+#             */
+/*   Updated: 2024/07/06 17:16:23 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "minitalk.h"
+#ifndef MINITALK_H
+# define MINITALK_H
 
-int main()
-{
-	return (0);
-}
+// EXTERNAL LIB
+# include <fcntl.h>
+# include <memory.h>
+# include <stdio.h>
+# include <stdlib.h>
+# include <unistd.h>
+
+// LOCAL LIBRARIES
+# include "libft.h"
+
+
+#endif
