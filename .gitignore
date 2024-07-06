@@ -1,3 +1,4 @@
 minitalk
 *.o
 bin
+.DS_Store
