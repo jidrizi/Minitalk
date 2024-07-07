@@ -6,7 +6,7 @@
 #    By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/06 16:14:51 by jidrizi           #+#    #+#              #
-#    Updated: 2024/07/06 18:42:14 by jidrizi          ###   ########.fr        #
+#    Updated: 2024/07/07 17:11:56 by jidrizi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ CC = cc
  
 CFLAGS = -Wall -Werror -Wextra
 
-SRC = main.c
+SRC = client.c server.c
 
 OBJS = $(SRC:%.c=bin/%.o)
 

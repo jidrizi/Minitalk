@@ -1,30 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   minitalk.h                                         :+:      :+:    :+:   */
+/*   client.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/07/06 17:13:09 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/07 17:10:55 by jidrizi          ###   ########.fr       */
+/*   Created: 2024/07/06 21:33:32 by jidrizi           #+#    #+#             */
+/*   Updated: 2024/07/07 17:10:49 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MINITALK_H
-# define MINITALK_H
 
-// EXTERNAL LIB
-# include <fcntl.h>
-# include <memory.h>
-# include <stdio.h>
-# include <stdlib.h>
-# include <unistd.h>
-
-// LOCAL LIBRARIES
-# include "libft.h"
-
-// PROTOTYPES
-void signal_handler(int signal);
-
-
-#endif
+# include "minitalk.h"
