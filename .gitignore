@@ -2,3 +2,7 @@ minitalk
 *.o
 bin
 .DS_Store
+client
+server
+*.dSYM
+.vscode

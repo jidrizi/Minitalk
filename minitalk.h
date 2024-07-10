@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 17:13:09 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/07 17:10:55 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/10 17:30:53 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <signal.h>
 
 // LOCAL LIBRARIES
 # include "libft.h"
 
 // PROTOTYPES
-void signal_handler(int signal);
 
 
 #endif
