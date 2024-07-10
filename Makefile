@@ -6,7 +6,7 @@
 #    By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/06 16:14:51 by jidrizi           #+#    #+#              #
-#    Updated: 2024/07/10 17:18:38 by jidrizi          ###   ########.fr        #
+#    Updated: 2024/07/10 17:32:54 by jidrizi          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -44,6 +44,9 @@ bin/%.o : %.c $(DEPS) | bin
 
 $(CLIENT_NAME): ./libft/libft.a $(CLIENT_OBJS)
 	$(CC) -o $(CLIENT_NAME) $(CLIENT_OBJS) $(LIB) -ldl $(HEADER) $(CFLAGS)
+
+$(SERVER_NAME): ./libft/libft.a $(SERVER_OBJS)
+	$(CC) -o $(SERVER_NAME) $(SERVER_OBJS) $(LIB) -ldl $(HEADER) $(CFLAGS)
 
 clean:
 	@rm -rf bin
