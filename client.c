@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 21:33:32 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/11 16:28:18 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/11 16:29:16 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,5 @@ int	main(int argc, char *argv[])
 	pid = ft_atoi(argv[1]);
 	msg = argv[2];
 	send_message(pid, msg);
-	ft_printf("Message sent successfully\n");
 	return (0);
 }
