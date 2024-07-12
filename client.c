@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 21:33:32 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/11 16:29:16 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/12 18:10:22 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,9 @@ static	void	send_message(pid_t pid, char *msg)
 		send_msg_char(pid, *msg);
 		msg++;
 	}
+	send_msg_char(pid, '\0');
 }
+
 
 int	main(int argc, char *argv[])
 {

@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 21:33:35 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/10 18:38:02 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/12 18:05:30 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,10 @@ static void	message_reciever(int signal)
 	static int		bits = 0;
 	static int		x = 0;
 	unsigned char	character;
+	static char 	*str;
+	char			*tmp;
 
+	character = 1;
 	bits <<= 1;
 	if (signal == SIGUSR1)
 		bits |= 1;
@@ -25,9 +28,17 @@ static void	message_reciever(int signal)
 	if (x == 8)
 	{
 		character = bits;
-		write(1, &character, 1);
+		tmp = ft_strjoin(str, (const char *)&character);
+		free(str);
+		str = tmp;
 		bits = 0;
 		x = 0;
+	}
+	if (character == '\0')
+	{
+		ft_printf("%s", str);
+		free(str);
+		str = NULL;
 	}
 }
 
@@ -35,10 +46,7 @@ int	main(int argc, char *argv[])
 {
 	(void)argv;
 	if (argc != 1)
-	{
-		ft_printf("Usage: ./server\n");
-		return (EXIT_FAILURE);
-	}
+		return (ft_printf("Usage: ./server\n"), EXIT_FAILURE);
 	ft_printf("Server PID: %d\n", getpid());
 	signal(SIGUSR1, message_reciever);
 	signal(SIGUSR2, message_reciever);
