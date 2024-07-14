@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 21:33:32 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/12 18:10:22 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/14 16:07:01 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ static	void	send_msg_char(pid_t pid, char c)
 			kill(pid, SIGUSR1);
 		else
 			kill(pid, SIGUSR2);
-		usleep(60);
+		usleep(200);
 		index--;
 	}
 }
@@ -35,6 +35,7 @@ static	void	send_message(pid_t pid, char *msg)
 		send_msg_char(pid, *msg);
 		msg++;
 	}
+	usleep(200);
 	send_msg_char(pid, '\0');
 }
 

@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 21:33:35 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/13 20:40:32 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/14 16:21:36 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,22 +41,14 @@ static void	message_reciever(int signal)
 	}
 }
 
-static void leaks(int signal)
-{
-	signal = 0;
-	system("leaks server");
-	exit(0);
-}
-
 int	main(int argc, char *argv[])
 {
 	(void)argv;
 	if (argc != 1)
-		return (ft_printf("Usage: ./server\n"), EXIT_FAILURE);
+		return (ft_printf("Error\nUsage: ./server\n"), EXIT_FAILURE);
 	ft_printf("Server PID: %d\n", getpid());
 	signal(SIGUSR1, message_reciever);
 	signal(SIGUSR2, message_reciever);
-	signal(SIGINT, leaks);
 	while (1)
 		pause();
 	return (0);
