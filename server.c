@@ -6,7 +6,7 @@
 /*   By: jidrizi <jidrizi@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/06 21:33:35 by jidrizi           #+#    #+#             */
-/*   Updated: 2024/07/14 16:21:36 by jidrizi          ###   ########.fr       */
+/*   Updated: 2024/07/14 16:28:03 by jidrizi          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void	message_reciever(int signal)
 	static int		bits = 0;
 	static int		x = 0;
 	unsigned char	character;
-	static char 	*str;
+	static char		*str;
 	char			*tmp;
 
 	character = 1;
